@@ -1,0 +1,68 @@
+package teste_programacao;
+
+import java.util.ArrayList;
+
+public class ImprimeNumeros {
+	
+	
+	public void imprimir(){
+		MultiploTres tres = new MultiploTres();
+		MultiploCinco cinco = new MultiploCinco();
+		MultiploQuinze quinze = new MultiploQuinze();
+		
+		for (int i = 1; i < 101; i++) {
+			
+			if(quinze.search(i)){
+				System.out.println("fizzbuzz " + "\n");
+			}else if(tres.search(i)){
+				System.out.println("fizz " + "\n");
+			}else if(cinco.search(i)){
+				System.out.println("buzz" + "\n");
+			}else{
+				System.out.println(i + "\n");
+			}
+		}
+	}
+	
+	public void imprimir2(){
+		Operacao op = new Operacao();
+		ArrayList<String> tres = new ArrayList<String>();
+		ArrayList<String> cinco = new ArrayList<String>();
+		ArrayList<String> retorno = new ArrayList<String>();
+		for (int i = 1; i < 101; i++) {
+			tres.add(op.search(i, 3, "fizz"));
+			cinco.add(op.search(i, 5, "buzz"));
+		}
+		
+		for (int i = 0; i < tres.size(); i++) {
+			if (tres.get(i)=="" && cinco.get(i)==""){
+				retorno.add(Integer.toString(i+1));
+			}else if(tres.get(i)==""){
+				retorno.add(cinco.get(i));
+			}else{
+				retorno.add(tres.get(i));
+			}
+		}
+		
+		for (int i = 0; i < tres.size(); i++) {
+			
+			System.out.println(retorno.get(i));	
+		}
+	}
+	
+	
+	public void imprimir3(){
+		Operacao op = new Operacao();
+		ArrayList<String> retorno = new ArrayList<String>();
+		
+		for (int i = 1; i < 101; i++) {
+			retorno.add(Integer.toString(i));
+			if(retorno.get(i-1)==""){
+				retorno.add(i-1, op.search(i, 3, "fizz"));
+			}
+			System.out.println(retorno.get(i-1));
+			
+		}
+	}
+	
+}
