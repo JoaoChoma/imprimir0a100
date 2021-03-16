@@ -1,0 +1,11 @@
+package teste_programacao;
+
+public class MultiploCinco {
+	public String search(int x) {
+
+		if (x % 5 == 0) {
+			return "buzz";
+		}
+		return "";
+	}
+}

@@ -1,0 +1,12 @@
+package teste_programacao;
+
+public class MultiploTres {
+
+	public String search(int x){
+		
+		if (x %3 == 0){
+			return "fizz";
+		}
+		return "";
+	}
+}
