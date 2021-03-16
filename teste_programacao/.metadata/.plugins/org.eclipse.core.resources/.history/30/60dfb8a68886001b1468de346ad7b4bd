@@ -11,4 +11,8 @@ public class Operacao {
 		return "";
 	}
 	
+	
+	public void listas(String input){
+		
+	}
 }
